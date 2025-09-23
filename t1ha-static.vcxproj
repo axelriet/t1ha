@@ -284,7 +284,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PreprocessorDefinitions>WIN64;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <WarningLevel>Level4</WarningLevel>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -295,11 +295,18 @@
       <LanguageStandard_C>stdclatest</LanguageStandard_C>
       <SupportJustMyCode>false</SupportJustMyCode>
       <CompileAsManaged>false</CompileAsManaged>
-      <SDLCheck>true</SDLCheck>
-      <ControlFlowGuard>Guard</ControlFlowGuard>
+      <SDLCheck>false</SDLCheck>
       <FloatingPointModel>Default</FloatingPointModel>
       <CallingConvention>VectorCall</CallingConvention>
     </ClCompile>
+    <PostBuildEvent>
+      <Command>copy /y $(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\$(TargetName)$(TargetExt) $(SolutionDir)lib\$(TargetName)$(TargetExt)
+copy /y $(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\$(TargetName).pdb $(SolutionDir)lib\$(TargetName).pdb
+</Command>
+    </PostBuildEvent>
+    <Lib>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <ClCompile>
@@ -349,23 +356,30 @@
     <ClCompile>
       <PreprocessorDefinitions>WIN64;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <OmitFramePointers>false</OmitFramePointers>
       <WarningLevel>Level4</WarningLevel>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdclatest</LanguageStandard_C>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <SupportJustMyCode>false</SupportJustMyCode>
       <CompileAsManaged>false</CompileAsManaged>
-      <SDLCheck>true</SDLCheck>
-      <ControlFlowGuard>Guard</ControlFlowGuard>
+      <SDLCheck>false</SDLCheck>
       <FloatingPointModel>Default</FloatingPointModel>
       <CallingConvention>VectorCall</CallingConvention>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
+    <PostBuildEvent>
+      <Command>copy /y $(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\$(TargetName)$(TargetExt) $(SolutionDir)lib\$(TargetName)$(TargetExt)
+copy /y $(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\$(TargetName).pdb $(SolutionDir)lib\$(TargetName).pdb
+</Command>
+    </PostBuildEvent>
+    <Lib>
+      <LinkTimeCodeGeneration>false</LinkTimeCodeGeneration>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <ClCompile>
@@ -373,7 +387,6 @@
       <StringPooling>true</StringPooling>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <OmitFramePointers>false</OmitFramePointers>
       <WarningLevel>Level4</WarningLevel>
       <TreatWarningAsError>true</TreatWarningAsError>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
