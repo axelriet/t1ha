@@ -178,7 +178,6 @@
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
       <FloatingPointModel>Default</FloatingPointModel>
       <CallingConvention>VectorCall</CallingConvention>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -371,7 +370,6 @@ copy /y $(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\$(TargetNa
       <SDLCheck>false</SDLCheck>
       <FloatingPointModel>Default</FloatingPointModel>
       <CallingConvention>VectorCall</CallingConvention>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <PostBuildEvent>
       <Command>copy /y $(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\$(TargetName)$(TargetExt) $(SolutionDir)lib\$(TargetName)$(TargetExt)
@@ -401,7 +399,6 @@ copy /y $(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\$(TargetNa
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
       <FloatingPointModel>Default</FloatingPointModel>
       <CallingConvention>VectorCall</CallingConvention>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
@@ -422,7 +419,6 @@ copy /y $(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\$(TargetNa
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
       <FloatingPointModel>Default</FloatingPointModel>
       <CallingConvention>VectorCall</CallingConvention>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
